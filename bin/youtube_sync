@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'youtube_sync'
+YoutubeSync::CLI.start(ARGV)
