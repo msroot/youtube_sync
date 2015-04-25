@@ -31,6 +31,8 @@ module YoutubeSync
     def perform
       dir, file  = options[:dir], options[:file]
       
+      file = File.exist?(file) ? file : File.join(dir, file)
+      
       [dir, file].each  do |required|
         say "#{required} not exist", :red and return unless File.exist?(required)
       end
